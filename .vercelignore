@@ -1,0 +1,10 @@
+**/node_modules
+**/.git
+**/uploads/**
+!**/uploads/.gitkeep
+scripts/fixtures/lintel
+scripts/reports
+test-results
+playwright-report
+**/.svelte-kit
+**/agent-transcripts

@@ -1,0 +1,36 @@
+{
+  "name": "extractor-rfp-lintel",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@9.15.0",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "dev": "node scripts/dev-local.mjs",
+    "dev:api": "pnpm --filter @extractor-rfp/api dev",
+    "dev:web": "pnpm --filter @extractor-rfp/web dev",
+    "seed": "pnpm --filter @extractor-rfp/api seed",
+    "cleanup:uploads": "pnpm --filter @extractor-rfp/api cleanup:uploads",
+    "smoke": "node --env-file=.env scripts/smoke-e2e.mjs",
+    "check": "node scripts/check-ready.mjs",
+    "validate:extract": "node scripts/validate-extract.mjs",
+    "test": "pnpm --filter @extractor-rfp/api test",
+    "test:e2e": "playwright test",
+    "build": "pnpm --filter @extractor-rfp/web build",
+    "vercel-build": "pnpm --filter @extractor-rfp/web build",
+    "start": "pnpm -r --parallel run start"
+  },
+  "pnpm": {
+    "overrides": {
+      "minimatch@<10.0.3": "10.0.3"
+    }
+  },
+  "devDependencies": {
+    "@playwright/test": "1.56.1"
+  },
+  "dependencies": {
+    "@extractor-rfp/api": "workspace:*",
+    "serverless-http": "3.2.0"
+  }
+}

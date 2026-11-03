@@ -1,0 +1,26 @@
+@import 'tailwindcss';
+
+:root {
+	--brand: #0f4c5c;
+	--brand-soft: #e8f2f4;
+	--accent: #e36414;
+}
+
+body {
+	font-family: 'Segoe UI', system-ui, sans-serif;
+	overflow-x: hidden;
+}
+
+/* Tablas: no romper el layout en pantallas angostas */
+.table-scroll {
+	overflow-x: auto;
+	-webkit-overflow-scrolling: touch;
+}
+
+/* Targets táctiles mínimos en controles principales */
+@media (max-width: 640px) {
+	.tap-target {
+		min-height: 2.5rem;
+		min-width: 2.5rem;
+	}
+}
